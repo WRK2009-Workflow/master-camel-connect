@@ -1,0 +1,24 @@
+{
+  "name": "camel-connect",
+  "version": "1.0.0",
+  "description": "README",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./source/app.js",
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octodemo/camel-connect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octodemo/camel-connect/issues"
+  },
+  "homepage": "https://github.com/octodemo/camel-connect#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jasmine": "^3.4.0"
+  }
+}
