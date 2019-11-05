@@ -3,14 +3,14 @@
 GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement those three usecases across your repositories on GitHub. We encourage you not to skip `Phase 2` as this is one of the most important steps to implementing actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available on **WRK2009-Workflow under the `workshop-complete` branch** for your convienience and reference. When you are complete, feel free to ask for feedback from your moderator and remember the best way to learn is to teach!
 
 **Phase 1: Repo Creation**
-  > **The goal of this phase is to create your own repo where you can build out GitHub Actions. You will also be introduced to GitHub flow and git if you haven't seen it in the past.**
+  > **The goal of this phase is to create your own repo where you can build out GitHub Actions. You will also be introduced to GitHub flow and [git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) if you haven't seen it in the past.**
   * Create your own repository in the WRK2009-Workflow Organization.
   * Clone your repository to local machine.
   * Clone `master-camel-connect` repository to local machine.
   * Move `master-camel-connect@master` files into your new repository (excluding the .github directory).
   * Run `npm install` to install depenencies.
   * Understand [GitHub flow](https://guides.github.com/introduction/flow/).
-  * `$: git add .; $: git commit -m'initial repo push' ; $: git push origin master;` updating your remote repo on GitHub.
+  * `$: git add .; $: git commit -m'initial repo push'; $: git push origin master;` updating your remote repo on GitHub.
   * Checkout to a new feature branch. `$: git checkout -b your-name-actions;`
   * If `npm` or `node` have not been installed, [install them](https://www.guru99.com/download-install-node-js.html).
     
@@ -23,6 +23,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   * GitHub API - [Creating an Issue](https://developer.github.com/v3/issues/).
   * [How to use Postman](https://learning.getpostman.com/getting-started/) to send an API request.
   * [Simple JavaScript](https://www.w3schools.com/js/js_examples.asp).
+  * Understanding [git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F), the distributed version control system. 
   
 **Phase 3: Implement your first Action (For Automation)**
   > **The goal of this phase is to implement an action that creates an issue when you send the 'repository_dispatch' event to it. In this case using Postman, in reality it would be a custom webhook from your 3rd party service.**
