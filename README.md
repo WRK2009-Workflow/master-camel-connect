@@ -61,7 +61,8 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   * Leverage GitHub actions to push your build artifact to GitHub Package Registry.
   * Leverage another action to pull your artifact from GPR to your Infrastructure. 
 
- 
+-------
+
 ### This repository is a simple API written in Node Express and unit tested in Jasmine. Actions are leveraged to perform automation functions and CI/CD to Azure.
 
 ### Specs:
