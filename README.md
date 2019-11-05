@@ -1,5 +1,7 @@
 ### WorkShop Guide:
 
+GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement those three usecases across your repositories on GitHub. We encourage you to not skip `Phase 2` as this is one of the most important steps to implementing actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on help.github.com. The `final state` of this workshop is available on **WRK2009-Workflow under the `workshop-complete` branch** for your convienience and reference. 
+
 **Phase 1: Repo Creation**
   * Create your own repository in the WORK2009-Workflow Organization.
   * Clone your repository to local machine.
@@ -15,6 +17,7 @@
   * Integrating a 3rd party service with the [repository dispatch event](https://developer.github.com/v3/repos/#create-a-repository-dispatch-event).
   * GitHub API - [Creating an Issue](https://developer.github.com/v3/issues/).
   * [How to use Postman](https://learning.getpostman.com/getting-started/) to send an API request.
+  * [Simple JavaScript](https://www.w3schools.com/js/js_examples.asp).
   
 **Phase 3: Implement your first Action (For Automation)**
   * Click the `Actions` tab in your repository, follow the flow to create a `.github` directory with the node starter kit.
@@ -32,15 +35,41 @@
     > `main: './main/automation/update-issues.js'`
     > main should point to where you are building your actual automation logic from the update-issues-action directory. This will behave like a lambda or azure fcn.
   * In your text editor, build the automation logic for creating an issue using the GitHub Issue APIs.
-    > Refer to the example code in `master-camel-connect` .github for support.
+    > Refer to the example code in `master-camel-connect` branch: `workshop-complete` `./.github` for support.
   * Modify your workflow file to run `on [repository_dispatch]`
-  * Test your workflow using Postman or cURL, build your action, review the Actions logs to debug. 
+  * Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
+
+**Phase 4: Implement your second Action (For CI)**
+  * Go back to github.com/your_repository.
+  * Create another workflow.yml file named `unit-test-ci.yml` in `.github/workflows` for CI.
+  * Set the workflow to run on:
+    > on: 
+      > pull_request:
+        > branches:	
+        > - master	
+
+    > push:	
+      > branches:	
+      >  - develop
+  * Ensure your application runs locally when you type `npm test`. Validate tests pass locally.
+  * In your workflow file, ensure that the action runs on ` - run: npm test`.
+  * Follow GitHub Flow to push this workflow file to your remote repo.
+  * Test your workflow by modifying the `./spec/unit-tests` directory for tests passing/failing.
+  * Read the logs, follow the documentation to debug.
+**Phase 5: GitHub Actions for CD**
+  * If you have gotten here, congratulations. 
+  * Leverage GitHub actions to push your build artifact to GitHub Package Registry.
+  * Leverage another action to pull your artifact from GPR to your Infrastructure. 
 
  
-### This repository is a simple API written in Node Express and unit tested in Jasmine. Actions are leveraged to perform ancilary functions and CI/CD to AWS. Live Demo Here  
+### This repository is a simple API written in Node Express and unit tested in Jasmine. Actions are leveraged to perform automation functions and CI/CD to Azure.
+
+### Specs:
+> `./specs/unit-tests/factServiceSpec.js`
+> `Line 16` can be modified to ensure tests pass or fail. Simply change the "expected" value of the assertion. 
 
 ### Workflows:
-> .github/workflows
+> `.github/workflows`
 
 - **unit-test-ci:**
   - Run unit tests on all services when push to Develop Branch or PR on Master.
@@ -49,7 +78,7 @@
   - Load repo secrets, then call update-issues-action on `repository_dispatch`.
 
 ### Actions:
-> .github/actions
+> `.github/actions`
 
 - **update-issues-action:**
-  - Creates an issue for every new Azure DevOps Board Work Item that is created.
+  - Creates an issue when the repository_dispatch event is triggered. The contents of that Issue are defined by an associated work item created in a Fictitious Azure Board instance.
