@@ -1,6 +1,6 @@
 ### WorkShop Guide:
 
-GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement those three usecases across your repositories on GitHub. We encourage you to not skip `Phase 2` as this is one of the most important steps to implementing actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available on **WRK2009-Workflow under the `workshop-complete` branch** for your convienience and reference. 
+GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement those three usecases across your repositories on GitHub. We encourage you not to skip `Phase 2` as this is one of the most important steps to implementing actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available on **WRK2009-Workflow under the `workshop-complete` branch** for your convienience and reference. 
 
 **Phase 1: Repo Creation**
   * Create your own repository in the WRK2009-Workflow Organization.
