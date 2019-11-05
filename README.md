@@ -64,7 +64,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   * Test your workflow by modifying the `./spec/unit-tests` directory for tests passing/failing.
   * Read the logs, follow the documentation to debug.
 
-**Phase 5: GitHub Actions for CD**
+**Phase 5: GitHub Actions (For CD)**
   > **This phase is a handsoff self driven phase. It requires you to build a workflow that deploys your application to your defined infrastructure using Actions.**
   * If you have gotten here, congratulations. 
   * Leverage GitHub actions to push your build artifact to GitHub Package Registry.
@@ -72,7 +72,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 
 -------
 
-### This repository is a simple API written in Node Express and unit tested in Jasmine. Actions are leveraged to perform automation functions and CI/CD to Azure.
+### This repository is a simple API written in Node Express and unit tested in Jasmine. Actions are written in vanilla JS.
 
 ### Specs:
 > `./specs/unit-tests/factServiceSpec.js`
