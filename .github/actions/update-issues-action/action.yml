@@ -1,0 +1,26 @@
+name: 'Create Repo Issues from Azure Boards Work Items'
+description: 'Creates a new issue for every Azure DevOps Work Item created as a feature in boards.'
+author: 'alwell-kevin'
+inputs:
+  node-version:
+    description: 'Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0'
+    default: '12'
+  ADO_PAT:
+    required: true
+  ADO_ORG:
+    required: true
+  ADO_PROJ:
+    required: true
+  ADO_TEAM:
+    required: true
+  GH_TOKEN:
+    required: true
+  GH_USER:
+    required: true
+  GH_REPO:
+    required: true
+  GH_ORG:
+    required: true
+runs:
+  using: 'node12'
+  main: './main/automation/update-issues.js'
