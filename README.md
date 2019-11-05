@@ -43,7 +43,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   * Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
 
 **Phase 4: Implement your second Action (For CI)**
-**The goal of this phase is to implement your second GitHub Action. This Action will run CI - with your tests on some event at a given branch. Documentation is lighter, beacuse if you have gotten here its likely you will find a way to succeed!**
+  > **The goal of this phase is to implement your second GitHub Action. This Action will run CI - with your tests on some event at a given branch. Documentation is lighter, beacuse if you have gotten here its likely you will find a way to succeed!**
   * Go back to github.com/your_repository.
   * Create another workflow.yml file named `unit-test-ci.yml` in `.github/workflows` for CI.
   * Set the workflow to run on:
@@ -61,7 +61,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   * Test your workflow by modifying the `./spec/unit-tests` directory for tests passing/failing.
   * Read the logs, follow the documentation to debug.
 **Phase 5: GitHub Actions for CD**
-**This phase is a handsoff self driven phase. It requires you to build a workflow that deploys your application to your defined infrastructure using Actions.**
+  > **This phase is a handsoff self driven phase. It requires you to build a workflow that deploys your application to your defined infrastructure using Actions.**
   * If you have gotten here, congratulations. 
   * Leverage GitHub actions to push your build artifact to GitHub Package Registry.
   * Leverage another action to pull your artifact from GPR to your Infrastructure. 
