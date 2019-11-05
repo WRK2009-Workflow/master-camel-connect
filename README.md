@@ -1,4 +1,4 @@
-### This repository is a simple API written in Node Express and unit tested in Jasmine. Actions are leveraged to perform ancilary functions and CI/CD to AWS. Live Demo Here :) 
+### This repository is a simple API written in Node Express and unit tested in Jasmine. Actions are leveraged to perform ancilary functions and CI/CD to AWS. Live Demo Here  
 
 ### Workflows:
 > .github/workflows
