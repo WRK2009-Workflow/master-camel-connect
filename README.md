@@ -5,6 +5,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 **Phase 1: Repo Creation**
   > **The goal of this phase is to create your own repo where you can build out GitHub Actions. You will also be introduced to GitHub Flow and [Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) if you haven't seen it in the past.**
   1. Create your own repository in the WRK2009-Workflow Organization.
+    ![Organization Homepage](/images/newrepo.png)
   2. Clone your repository to local machine.
   3. Clone `master-camel-connect` repository to local machine.
   4. Move `master-camel-connect@master` files into your new repository (excluding the .github directory).
@@ -29,6 +30,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   > **The goal of this phase is to implement an action that creates an issue when you send the 'repository_dispatch' event to it. In this case using Postman, in reality it would be a custom webhook from your 3rd party service.**
   1. Click the `Actions` tab in your repository, follow the flow to create a `.github` directory with the node starter kit.
   ![Actions Tab](/images/actiontab.png)
+  ![Actions Template](/images/actiontemplate.png)
   2. Validate that the `.github` directory has been created in your root.
   3. Review the workflow file created in `./.github/workflows/nodejs.yml`, understand the event ingest mechanism defined under `on` and which branches it is targeting. Understand how your workflow is invoking an external action during execution. This is key to leveraging other internal actions across your enterprise organization.
   4. Briefly review how your env is configured during steps execution.
@@ -37,6 +39,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   7. Create an `action.yml` file in the `updates-issues-action`.
   8. In `action.yml`, define your action metadata. [Docs HERE](https://help.github.com/en/github/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions).
   9. Define your secrets on your repo under `settings/secrets`.
+  ![Secrets Tab](/images/secrets.png)
   10. Understand the `runs` meta tag operates like:
     > `runs:`
     > `using: 'node12'`
@@ -46,6 +49,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
     > Refer to the example code in `master-camel-connect@workshop-complete` `./.github` for support.
   12. Modify your workflow file to run `on [repository_dispatch]`.
   13. Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
+  ![Actions Logs](/images/actionlogs.png)
 
 **Phase 4: Implement your second Action (For CI)**
   > **The goal of this phase is to implement your second GitHub Action. This Action will run CI - with your tests on some event at a given branch. Documentation is lighter, beacuse if you have gotten here its likely you will find a way to succeed!**
@@ -62,6 +66,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
       > branches:	
       >  - develop
   5. In your workflow file, ensure that the action runs on ` - run: npm test`.
+  ![Workflow Definition](/images/workflow.png)
   6. Follow GitHub Flow to push this workflow file to your remote repo.
   7. Test your workflow by modifying the `./spec/unit-tests` directory for tests passing/failing.
   8. Read the logs, follow the documentation to debug.
