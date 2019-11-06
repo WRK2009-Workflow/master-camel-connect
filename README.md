@@ -42,7 +42,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   6. Create an `updates-issues-action` directory under `./.github/actions`.
   7. Create an `action.yml` file in the `updates-issues-action`.
   8. In `action.yml`, define your action metadata. [Docs HERE](https://help.github.com/en/github/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions).
-  9. Define your secrets on your repo under `settings/secrets`.
+  9. Define your secrets on your repo under `settings/secrets`. An example of which secrets to include, (yours may be different based on your implementation) can be found [here](https://github.com/WRK2009-Workflow/master-camel-connect/blob/workshop-complete/.github/actions/update-issues-action/action.yml)
   ![Secrets Tab](/images/secrets.png)
   10. Understand the `runs` meta tag operates like:
     > `runs:`
