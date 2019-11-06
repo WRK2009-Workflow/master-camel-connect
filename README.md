@@ -14,6 +14,9 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   7. `$: git add .; $: git commit -m'initial repo push'; $: git push origin master;` updating your remote repo on GitHub.
   8. Checkout to a new feature branch. `$: git checkout -b your-name-actions;`
   9. If `npm` or `node` have not been installed, [install them](https://www.guru99.com/download-install-node-js.html).
+  10. Create a Personal Access token in your user/settings/developersettings.
+  ![Token Creation](/images/token.png)
+
     
 
 **Phase 2: Read the Docs**
@@ -23,6 +26,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   3. Integrating a 3rd party service with the [repository dispatch event](https://developer.github.com/v3/repos/#create-a-repository-dispatch-event).
   4. GitHub API - [Creating an Issue](https://developer.github.com/v3/issues/).
   5. [How to use Postman](https://learning.getpostman.com/getting-started/) to send an API request.
+  ![Postman](/images/postman.png)
   6. [Simple JavaScript](https://www.w3schools.com/js/js_examples.asp).
   7. Understanding [git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F), the distributed version control system. 
   
