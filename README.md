@@ -47,7 +47,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
     > `using: 'node12'`
     > `main: './main/automation/update-issues.js'`
     > `main:` should point to where you are building your actual automation logic from the update-issues-action directory. This will behave like a lambda or azure function.
-  1. In your text editor, build the automation logic for creating an issue using the GitHub Issue APIs.
+  1. In your text editor, build the automation logic for creating an issue using the GitHub Issue APIs.  
     > Refer to the example code in `master-camel-connect@workshop-complete` `./.github` for support.
   1. Modify your workflow file to run `on [repository_dispatch]`.
   1. Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
