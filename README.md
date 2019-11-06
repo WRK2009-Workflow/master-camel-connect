@@ -28,6 +28,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 **Phase 3: Implement your first Action (For Automation)**
   > **The goal of this phase is to implement an action that creates an issue when you send the 'repository_dispatch' event to it. In this case using Postman, in reality it would be a custom webhook from your 3rd party service.**
   1. Click the `Actions` tab in your repository, follow the flow to create a `.github` directory with the node starter kit.
+  ![Actions Tab](/images/actiontab.png)
   2. Validate that the `.github` directory has been created in your root.
   3. Review the workflow file created in `./.github/workflows/nodejs.yml`, understand the event ingest mechanism defined under `on` and which branches it is targeting. Understand how your workflow is invoking an external action during execution. This is key to leveraging other internal actions across your enterprise organization.
   4. Briefly review how your env is configured during steps execution.
