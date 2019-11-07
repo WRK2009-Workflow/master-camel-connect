@@ -1,0 +1,28 @@
+{
+  "name": "camel-connect",
+  "version": "1.0.0",
+  "description": "An application that enables camels to connect",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo success"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octodemo/camel-connect.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octodemo/camel-connect/issues"
+  },
+  "homepage": "https://github.com/octodemo/camel-connect#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "request": "^2.88.0"
+  }
+}
