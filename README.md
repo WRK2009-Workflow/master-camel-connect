@@ -1,12 +1,13 @@
 ### Workshop Guide:
 
-GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement those three use cases across your repositories on GitHub. We encourage you not to skip `Phase 2` as this is one of the most important steps to implementing actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available [here](https://github.com/WRK2009-Workflow/master-camel-connect/tree/master) for your convenience and reference. When you are complete, feel free to ask for feedback from your moderator and remember the best way to learn is to teach!
+GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement those three use cases across your repositories on GitHub. We encourage you not to skip `Phase 2` as this is one of the most important steps to implementing actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available [here](https://github.com/WRK2009-Workflow/master-camel-connect) for your convenience and reference. When you are complete, feel free to ask for feedback from your moderator and remember the best way to learn is to teach!
 
 **Phase 1: Repo Creation**
   > **The goal of Phase 1 is to create your own branch off the forked `master-camel-connect` repo where you can build out your own GitHub Actions. You will also be introduced to the GitHub Flow and [Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) if you haven't seen it in the past.**
-  1. Fork [this repository](https://github.com/WRK2009-Workflow/master-camel-connect/tree/master) to your user account.
+  1. Fork [this repository](https://github.com/WRK2009-Workflow/master-camel-connect) to your user account.
   1. Using your terminal, command prompt, or the [GitHub client](https://desktop.github.com).
   1. Clone your new repository to your local machine using `git clone https://github.com/your_username/master-camel-connect.git`
+    - If clone is failing, check that you have replaced the variable in that url.
   1. Now that you have the repo locally, cd into the application.
   1. Run `npm install` in the root of your directory to install dependencies.
   1. Understand [GitHub flow](https://guides.github.com/introduction/flow/). This is how you will make contributions in practice.
