@@ -3,9 +3,9 @@
 GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement those three use cases across your repositories on GitHub. We encourage you not to skip `Phase 2` as this is one of the most important steps to implementing actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available [here](https://github.com/WRK2009-Workflow/master-camel-connect/tree/master) for your convenience and reference. When you are complete, feel free to ask for feedback from your moderator and remember the best way to learn is to teach!
 
 **Phase 1: Repo Creation**
-  > **The goal of this phase is to create your own branch off the forked `master-camel-connect` repo where you can build out your own GitHub Actions. You will also be introduced to the GitHub Flow and [Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) if you haven't seen it in the past.**
+  > **The goal of Phase 1 is to create your own branch off the forked `master-camel-connect` repo where you can build out your own GitHub Actions. You will also be introduced to the GitHub Flow and [Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) if you haven't seen it in the past.**
   1. Fork [this repository](https://github.com/WRK2009-Workflow/master-camel-connect/tree/master) to your user account.
-  1. Using your terminal, command prompt, or the [GitHub client](https://www.google.com/search?q=github+for+mac).
+  1. Using your terminal, command prompt, or the [GitHub client](https://desktop.github.com).
   1. Clone your new repository to your local machine using `git clone https://github.com/your_username/master-camel-connect.git`
   1. Now that you have the repo locally, cd into the application.
   1. Run `npm install` in the root of your directory to install dependencies.
@@ -16,10 +16,10 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   1. If `npm` or `node` have not been installed, [install them](https://www.guru99.com/download-install-node-js.html).
   1. Create a Personal Access token in your user/settings/developersettings. The scope of this PAT must include `write` to Repo and don't forget to delete it after the workshop :).
   ![Token Creation](/images/token.png)
-  1. You should now a) Have your own version of the application on your local machine. b) Have your name and the date at the top of your README. c) Be working off `your-name-actions` branch of your repository. d) Ready to create an action!
+  1. You should now a) Have your own version of the application in GitHub and on your local machine. b) Have your name and the date at the top of your README. c) Be working off `your-name-actions` branch of your repository. d) Ready to create an action!
 
-**Phase 2: Read the Docs**
-  > **The goal of this phase is to understand the major concepts that will be implemented throughout the workshop. Documentation should be read carefully and referred to often.**
+**Phase 2: IMPORTANT Read the Docs**
+  > **The goal of Phase 2 is to understand the major concepts that will be implemented throughout the workshop. Documentation should be read carefully and referred to often.**
   1. [Understanding Actions](https://help.github.com/en/github/automating-your-workflow-with-github-actions/about-github-actions#core-concepts-for-github-actions).
   1. [Creating a workflow](https://help.github.com/en/github/automating-your-workflow-with-github-actions/configuring-a-workflow).
   1. Integrating a 3rd party service with the [repository dispatch event](https://developer.github.com/v3/repos/#create-a-repository-dispatch-event).
@@ -31,8 +31,8 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 
 **Phase 3: Implement your first CI Action**
   > **The goal of this phase is to implement your first GitHub Action. This Action will run CI - with your tests on push to your feature branch.**
-  1. Ensure your application runs locally when you type `npm test` in the root of your repository. Validate tests pass locally.
-  2. Review your workflow.yml file named `unit-test-ci.yml` in `.github/workflows`.
+  1. Ensure your application runs locally when you run `npm test` in the root of your repository. Validate tests pass locally.
+  2. Review your `workflow.yml` file named `unit-test-ci.yml` in `.github/workflows`.
   3. Set the workflow to run on:
     > on:
       > pull_request:
@@ -42,11 +42,11 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
     > push:
       > branches:
       >  - <your-name-actions (this is the branch you created)>
-  4. In your workflow file (./.github/workflows/unit-test-ci.yml) , ensure that the action runs on ` - run: npm test`.
+  4. In your workflow file `./.github/workflows/unit-test-ci.yml` , ensure that the action runs on ` - run: npm test`.
   ![Workflow Definition](/images/workflow.png)
   5. Uncomment the workflow file. Follow GitHub Flow to push your uncommented workflow file to your remote repo.
   6. `Pass/Fail` your workflow by modifying the `./spec/unit-tests/factServiceSpec.js` file.
-  7. Review the Actions Tab.
+  7. Review the Actions Tab for [LIVE LOGS](https://github.blog/2019-08-08-github-actions-now-supports-ci-cd/)!
   ![Actions Tab](/images/actiontab.png)
   8. Congratulations! Your Action just ran your tests when you pushed to your feature branch! Well done!
 
@@ -75,8 +75,9 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 **Phase 5: Implement your first CD Action**
   > **This phase is a hands-off self driven phase. It requires you to build a workflow that deploys your application to your defined infrastructure using Actions.**
   1. If you have gotten here, congratulations.
-  2. Leverage GitHub Actions to push your build artifact to GitHub Package Registry.
-  3. Leverage another Action to pull your artifact from GPR to your Infrastructure.
+  1. [Here](https://github.com/alwell-kevin/calculator) is an example of a Node app that is deployed to Azure using an action for CD.s
+  1. Leverage GitHub Actions to push your build artifact to GitHub Package Registry.
+  1. Leverage another Action to pull your artifact from GPR to your Infrastructure.
 
 -------
 
