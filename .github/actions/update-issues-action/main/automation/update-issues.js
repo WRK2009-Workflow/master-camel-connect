@@ -1,81 +1,22 @@
+//Remember, this is the "meat and potatoes" of your action logic.
+//This action simply makes an api request to create an issue on your repo when run.
+//Run when repository_dispatch on this repo.
+
+// ACTIONS CORE LIBRARIES
 const request = require('request');
 const core = require('@actions/core');
-const ADO_PAT= core.getInput('ADO_PAT');
-const ADO_ORG= core.getInput('ADO_ORG');
-const ADO_PROJ= core.getInput('ADO_PROJ');
-const ADO_TEAM= core.getInput('ADO_TEAM');
+
+//GETS SECRETS FROM REPO
 const GH_TOKEN= core.getInput('GH_TOKEN');
 const GH_USER= core.getInput('GH_USER');
 const GH_REPO=core.getInput('GH_REPO');
 const GH_ORG=core.getInput('GH_ORG');
 
-// // TODO:
-// 1. Create Issue from work item title and body. X
-// 2. remove tokens and use env vars with getInput.
-// 3. Make repo env var.
-// 4. ensure task is coming from right project!
-
-
-//GET ISSUES FROM ADO
-var getWorkItems = () => {
-  var workItems = [];
-
-  console.log("Getting ADO work items");
-  return new Promise(function(resolve, reject) {
-    var thirtySecondsAgo = (Date.now() - 30000);
-
-    var options = {
-      method: 'POST',
-      url: 'https://dev.azure.com/'+ADO_ORG+'/'+ADO_PROJ+'/'+ADO_TEAM+'/_apis/wit/wiql?api-version=5.1',
-      headers: {
-        Authorization: 'Basic ' + ADO_PAT,
-        'Content-Type': 'application/json'
-      },
-      body: {
-        query: 'Select [System.Id], [System.Title], [System.State], [System.WorkItemType] From WorkItems Where [System.WorkItemType] = \'Feature\''
-      },
-      json: true
-    };
-
-    request(options, function(error, response, body) {
-      var requestReturnedCounter = 0;
-      if (error) throw new Error(error);
-      console.log("GOT RESP FROM WORK ITEMs");
-      body.workItems.forEach((workItem, i) => {
-        var reqOptions = {
-          method: 'GET',
-          url: workItem.url,
-          headers: {
-            Authorization: 'Basic ' + ADO_PAT,
-            'Content-Type': 'application/json'
-          },
-          json: true
-        };
-        request(reqOptions, function(error, response, reqBody) {
-          requestReturnedCounter += 1;
-          // console.log("GOT RESP FROM WORK ITEM", requestReturnedCounter, body.workItems.length);
-
-          workItems.push({
-            "title": response.body.fields["System.Title"],
-            "description": response.body.fields["System.Description"],
-            "date": response.body.fields["System.ChangedDate"].toString()
-          });
-
-          if (requestReturnedCounter === body.workItems.length) {
-            resolve(workItems)
-          }
-        })
-      });
-    });
-
-  });
-}
-
-const updateRepo = (workItem) => {
-  console.log("Writing Work Item to Repo: ", workItem);
-
+// When invoked, create an issue in my repo. :)
+const updateRepo = () => {
   var request = require("request");
 
+// SIMPLE HTTP REQUEST TO GITHUB API TO CREATE AN ISSUE IN THE ORG/REPO
   var options = {
     method: 'POST',
     url: 'https://api.github.com/repos/'+GH_ORG+'/'+GH_REPO+'/issues',
@@ -86,8 +27,8 @@ const updateRepo = (workItem) => {
       'User-Agent': "machine_user"
     },
     body: {
-      title: workItem.title,
-      body: workItem.description,
+      title: GH_USER + " Actions Issue",
+      body: "This issue was created by a repository_dispatch event. Nice work!!",
       assignees: [GH_USER],
       labels: ['feature']
     },
@@ -97,40 +38,11 @@ const updateRepo = (workItem) => {
   request(options, function(error, response, body) {
     if (error) throw new Error(error);
 
-    console.log(workItem.title, "-> Issue Created");
+    console.log("Issue Created");
   });
 
 
 }
 
-//FIND NEW ISSUE SINCE EVENT
-var getNewestWorkItem = (workItems) => {
-  return new Promise(function(resolve, reject) {
-
-    console.log("getNewestWorkItem");
-    var currentDate = new Date()
-    var newestWorkItem = workItems[0]
-    diff = 99999999999;
-
-    workItems.forEach((workItem, i) => {
-      var workItemDate = new Date(workItem.date);
-      diff2 = currentDate - workItemDate
-
-      if (diff2 < diff) {
-        diff = diff2;
-        newestWorkItem = workItem;
-      }
-    })
-
-    console.log("newestWorkItem:", newestWorkItem);
-    resolve(newestWorkItem);
-  })
-}
-
-
-//CREATE ISSUE IN CURRENT REPO
-getWorkItems().then((workItems) => {
-  getNewestWorkItem(workItems).then((newestWorkItem) => {
-    updateRepo(newestWorkItem);
-  })
-})
+//CALLED WHEN ACTION RUN.
+updateRepo();

@@ -1,4 +1,4 @@
-name: Update Issues from Azure DevOps Board
+name: Create an issue on this repo when repository_dispatch event used on repo.
 
 on:
   repository_dispatch:
@@ -13,10 +13,6 @@ jobs:
       - uses: actions/setup-node@v1
       - uses: ./.github/actions/update-issues-action
         with:
-          ADO_PAT: ${{ secrets.ADO_PAT }}
-          ADO_ORG: ${{ secrets.ADO_ORG }}
-          ADO_PROJ: ${{ secrets.ADO_PROJ }}
-          ADO_TEAM: ${{ secrets.ADO_TEAM }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USER: ${{ secrets.GH_USER }}
           GH_REPO: ${{ secrets.GH_REPO }}

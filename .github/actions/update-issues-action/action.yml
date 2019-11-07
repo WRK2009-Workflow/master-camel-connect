@@ -1,18 +1,10 @@
-name: 'Create Repo Issues from Azure Boards Work Items'
-description: 'Creates a new issue for every Azure DevOps Work Item created as a feature in boards.'
+name: 'Create Repo Issues with a repository_dispatch event'
+description: 'Creates a new issue with some content every time the action is run. Action is triggered by a repository_dispatch event.'
 author: 'alwell-kevin'
 inputs:
   node-version:
-    description: 'Version Spec of the version to use.  Examples: 10.x, 10.15.1, >=10.15.0'
+    description: 'Version Spec of the version to use.'
     default: '12'
-  ADO_PAT:
-    required: true
-  ADO_ORG:
-    required: true
-  ADO_PROJ:
-    required: true
-  ADO_TEAM:
-    required: true
   GH_TOKEN:
     required: true
   GH_USER:
