@@ -4,6 +4,7 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 
 **Phase 1: Repo Creation**
   > **The goal of Phase 1 is to create your own branch off the forked `master-camel-connect` repo where you can build out your own GitHub Actions. You will also be introduced to the GitHub Flow and [Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) if you haven't seen it in the past.**
+  1. Star this repo at the top of the page.
   1. Fork [this repository](https://github.com/WRK2009-Workflow/master-camel-connect) to your user account.
   1. Using your terminal, command prompt, or the [GitHub client](https://desktop.github.com).
   1. Clone your new repository to your local machine using `git clone https://github.com/your_username/master-camel-connect.git`
@@ -76,9 +77,10 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 **Phase 5: Implement your first CD Action**
   > **This phase is a hands-off self driven phase. It requires you to build a workflow that deploys your application to your defined infrastructure using Actions.**
   1. If you have gotten here, congratulations.
-  1. [Here](https://github.com/alwell-kevin/calculator) is an example of a Node app that is deployed to Azure using an action for CD.s
-  1. Leverage GitHub Actions to push your build artifact to GitHub Package Registry.
-  1. Leverage another Action to pull your artifact from GPR to your Infrastructure.
+  1. [Here](https://github.com/alwell-kevin/calculator) is an example of a Node app that is deployed to Azure using an action for CD.
+  1. Leverage GitHub Actions to push your application to GitHub Package Registry.
+  1. Leverage another Action to pull your artifact from GPR and deploy to your Infrastructure.
+  1. If you finish this step, congratulations you have completed the workshop. Please consider opening a Pull Request on this repo to enhance documentation for future attendees. You are free to exit the session or continue hacking on a personal project. Thank you!
 
 -------
 
