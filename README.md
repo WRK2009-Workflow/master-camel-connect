@@ -35,13 +35,13 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   1. Ensure your application runs locally when you run `npm test` in the root of your repository. Validate tests pass locally.
   2. Review your `workflow.yml` file named `unit-test-ci.yml` in `.github/workflows`.
   3. Set the workflow to run on:
-    > on:
+    `> on:
       > pull_request:
         > branches:
         > - master
     > push:
       > branches:
-      >  - <your-name-actions (this is the branch you created)
+      >  - <your-name-actions (this is the branch you created)`
       
   4. In your workflow file `./.github/workflows/unit-test-ci.yml` , ensure that the action runs on ` - run: npm test`.
   ![Workflow Definition](/images/workflow.png)
