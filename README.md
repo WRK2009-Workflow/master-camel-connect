@@ -64,9 +64,7 @@ on:
      - You can see how this action is invoked from within your `update-issues.yml` workflow line 14 under `uses`.
   4. Review the `action.yml` file in directory: `.github/actions/updates-issues-action`. This is a meta file that describes the update-issues-action.
   5. In `action.yml`, uncomment your action metadata. [Helpful documentation here](https://help.github.com/en/github/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions).
-  6. Define the secrets listed in your `action.yml` file on your repo under `settings/secrets`.
-  ![Secrets Tab](/images/secrets.png)
-  7. Understand the `runs` meta tag operates like:
+  6. Understand the `runs` meta tag operates like:
   
   ```yaml
     runs:
@@ -76,9 +74,9 @@ on:
     
 > `main:` should point to where you are building your actual automation logic from the update-issues-action directory. This will behave like a lambda or azure function.
 
-  8. In your text editor, uncomment the automation logic found in `update-issues-action/main/automation/update-issues.js` for creating an issue using the GitHub Issue APIs. (sorry you will need to do this line by line to keep comments intact!)
-  9. Ensure your workflow file at `root/workflows/update-issues.yml` runs `on [repository_dispatch]`.
-  10. Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
+  7. In your text editor, uncomment the automation logic found in `update-issues-action/main/automation/update-issues.js` for creating an issue using the GitHub Issue APIs. (sorry you will need to do this line by line to keep comments intact!)
+  8. Ensure your workflow file at `root/workflows/update-issues.yml` runs `on [repository_dispatch]`.
+  9. Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
   ![Actions Logs](/images/actionlogs.png)
 
 **Phase 5: Implement your first CD Action**
@@ -104,7 +102,7 @@ on:
   - Run unit tests on all services when push to Develop Branch or PR on Master.
 
 - **update-issues:**
-  - Load repo secrets, then call update-issues-action on `repository_dispatch`.
+  - Call update-issues-action on `repository_dispatch`.
 
 ### Actions:
 > `.github/actions`
