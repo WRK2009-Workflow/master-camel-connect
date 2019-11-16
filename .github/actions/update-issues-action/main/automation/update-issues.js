@@ -1,48 +1,27 @@
 // //Remember, this is the "meat and potatoes" of your action logic.
 // //This action simply makes an api request to create an issue on your repo when run.
 // //Run when repository_dispatch on this repo.
-//
+
 // // ACTIONS CORE LIBRARIES
-// const request = require('request');
 // const core = require('@actions/core');
-//
-// //GETS SECRETS FROM REPO
-// const GH_TOKEN= core.getInput('GH_TOKEN');
-// const GH_USER= core.getInput('GH_USER');
-// const GH_REPO=core.getInput('GH_REPO');
-// const GH_ORG=core.getInput('GH_ORG');
-//
+// const { GitHub, context } = require('@actions/github');
+
+// // GETS INPUTS FROM ACTION
+// const body = core.getInput('body');
+
 // // When invoked, create an issue in my repo. :)
-// const updateRepo = () => {
-//   var request = require("request");
-//
-// // SIMPLE HTTP REQUEST TO GITHUB API TO CREATE AN ISSUE IN THE ORG/REPO
-//   var options = {
-//     method: 'POST',
-//     url: 'https://api.github.com/repos/'+GH_ORG+'/'+GH_REPO+'/issues',
-//     headers: {
-//       Authorization: 'Bearer ' + GH_TOKEN,
-//       'Content-Type': 'application/json',
-//       Accept: "application/vnd.github.symmetra-preview+json",
-//       'User-Agent': "machine_user"
-//     },
-//     body: {
-//       title: GH_USER + " Actions Issue",
-//       body: "This issue was created by a repository_dispatch event. Nice work!!",
-//       assignees: [GH_USER],
-//       labels: ['feature']
-//     },
-//     json: true
-//   };
-//
-//   request(options, function(error, response, body) {
-//     if (error) throw new Error(error);
-//
-//     console.log("Issue Created");
+// const updateRepo = async () => {
+//   // @actions/github is a nice utility to help us make calls to the GitHub API (https://github.com/actions/toolkit/tree/master/packages/github)
+//   // GITHUB_TOKEN is an automatically generated secret scoped to the repo that the workflows run in (https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret)
+//   const github = new GitHub(process.env.GITHUB_TOKEN); 
+//   // SIMPLE REQUEST TO GITHUB API TO CREATE AN ISSUE IN THE ORG/REPO
+//   await github.issues.create({
+//       ...context.repo,
+//       title: 'Test issue',
+//       body
 //   });
-//
-//
+
 // }
-//
+
 // //CALLED WHEN ACTION RUN.
 // updateRepo();
