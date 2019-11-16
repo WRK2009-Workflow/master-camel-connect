@@ -35,14 +35,17 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   1. Ensure your application runs locally when you run `npm test` in the root of your repository. Validate tests pass locally.
   2. Review your `workflow.yml` file named `unit-test-ci.yml` in `.github/workflows`.
   3. Set the workflow to run on:
-    `> on:
-      > pull_request:
-        > branches:
-        > - master
-    > push:
-      > branches:
-      >  - <your-name-actions (this is the branch you created)`
-      
+  
+```yaml
+on:
+  pull_request:
+    branches:
+    - master
+  push:
+    branches:
+    - <your-name-actions (this is the branch you created)
+```
+    
   4. In your workflow file `./.github/workflows/unit-test-ci.yml` , ensure that the action runs on ` - run: npm test`.
   ![Workflow Definition](/images/workflow.png)
   5. Uncomment the workflow file. Follow GitHub Flow to push your uncommented workflow file to your remote repo.
@@ -54,23 +57,28 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 **Phase 4: Implement your first automation Action**
   > **The goal of this phase is to implement an action that creates an issue when you send the 'repository_dispatch' event to it. In this case using Postman, in reality it would be a custom webhook from your 3rd party service.**
   1. Validate that the `.github` directory exists in your root.
-  1. Review the workflow file created in `./.github/workflows/update-issues.yml`:
+  2. Review the workflow file created in `./.github/workflows/update-issues.yml`:
      - Understand the event ingest mechanism defined under `on` and which branches it is targeting. (no action required)
      - Understand how your API request is going to trigger this workflow by sending a custom event named `repository_dispatch` (no action required)
-  1. An action that creates an issue in your repository when invoked has been created for you. The action is located in `.github/actions`. It is called `updates-issues-action`.
+  3. An action that creates an issue in your repository when invoked has been created for you. The action is located in `.github/actions`. It is called `updates-issues-action`.
      - You can see how this action is invoked from within your `update-issues.yml` workflow line 14 under `uses`.
-  1. Review the `action.yml` file in directory: `.github/actions/updates-issues-action`. This is a meta file that describes the update-issues-action.
-  1. In `action.yml`, uncomment your action metadata. [Helpful documentation here](https://help.github.com/en/github/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions).
-  1. Define the secrets listed in your `action.yml` file on your repo under `settings/secrets`.
+  4. Review the `action.yml` file in directory: `.github/actions/updates-issues-action`. This is a meta file that describes the update-issues-action.
+  5. In `action.yml`, uncomment your action metadata. [Helpful documentation here](https://help.github.com/en/github/automating-your-workflow-with-github-actions/metadata-syntax-for-github-actions).
+  6. Define the secrets listed in your `action.yml` file on your repo under `settings/secrets`.
   ![Secrets Tab](/images/secrets.png)
-  1. Understand the `runs` meta tag operates like:
-    > `runs:`
-    > `using: 'node12'`
-    > `main: './main/automation/update-issues.js'`
-    > `main:` should point to where you are building your actual automation logic from the update-issues-action directory. This will behave like a lambda or azure function.
-  1. In your text editor, uncomment the automation logic found in `update-issues-action/main/automation/update-issues.js` for creating an issue using the GitHub Issue APIs. (sorry you will need to do this line by line to keep comments intact!)
-  1. Ensure your workflow file at `root/workflows/update-issues.yml` runs `on [repository_dispatch]`.
-  1. Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
+  7. Understand the `runs` meta tag operates like:
+  
+  ```yaml
+    runs:
+      using: 'node12'
+      main: './main/automation/update-issues.js'
+  ```    
+    
+> `main:` should point to where you are building your actual automation logic from the update-issues-action directory. This will behave like a lambda or azure function.
+
+  8. In your text editor, uncomment the automation logic found in `update-issues-action/main/automation/update-issues.js` for creating an issue using the GitHub Issue APIs. (sorry you will need to do this line by line to keep comments intact!)
+  9. Ensure your workflow file at `root/workflows/update-issues.yml` runs `on [repository_dispatch]`.
+  10. Test your workflow using Postman or cURL, build your action using JS, review the Actions logs to debug.
   ![Actions Logs](/images/actionlogs.png)
 
 **Phase 5: Implement your first CD Action**
