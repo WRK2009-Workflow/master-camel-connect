@@ -12,9 +12,9 @@
 // // When invoked, create an issue in my repo. :)
 // const updateRepo = async () => {
 //   // @actions/github is a nice utility to help us make calls to the GitHub API (https://github.com/actions/toolkit/tree/master/packages/github)
-//   const github = new GitHub(process.env.GITHUB_TOKEN);
-
-//   // SIMPLE REQUEST TO GITHUB API USING OCTOKIT TO CREATE AN ISSUE IN THE ORG/REPO
+//   // GITHUB_TOKEN is an automatically generated secret scoped to the repo that the workflows run in (https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret)
+//   const github = new GitHub(process.env.GITHUB_TOKEN); 
+//   // SIMPLE REQUEST TO GITHUB API TO CREATE AN ISSUE IN THE ORG/REPO
 //   await github.issues.create({
 //       ...context.repo,
 //       title: 'Test issue',
