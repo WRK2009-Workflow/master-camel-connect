@@ -8,7 +8,7 @@
 
 // // GETS INPUTS FROM ACTION
 // const body = core.getInput('body');
-// const GITHUB_TOKEN = core.getInput('GITHUB_TOKEN');
+// const GITHUB_TOKEN = core.getInput('gh_token');
 
 // // When invoked, create an issue in my repo. :)
 // const updateRepo = async () => {
