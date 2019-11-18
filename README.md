@@ -26,7 +26,11 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   1. If `npm` or `node` have not been installed, [install them](https://www.guru99.com/download-install-node-js.html).
   1. Create a Personal Access token in your user/settings/developersettings. The scope of this PAT must include `write` to Repo and don't forget to delete it after the workshop :).
   ![Token Creation](/images/token.png)
-  1. You should now a) Have your own version of the application in GitHub and on your local machine. b) Have your name and the date at the top of your README. c) Be working off `your-name-actions` branch of your repository. d) Be ready to create an action!
+  1. You should now have:  
+    a) Your own version of the application in GitHub and on your local machine.   
+    b) Have your name and the date at the top of your README.     
+    c) Be working off `your-name-actions` branch of your repository.  
+    d) Be ready to create an action!  
 
 **Phase 2: IMPORTANT Read the Docs**
   > **The goal of Phase 2 is to understand the major concepts that will be implemented throughout the workshop. Documentation should be read carefully and referred to often.**
