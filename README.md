@@ -14,7 +14,15 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   1. Understand [GitHub flow](https://guides.github.com/introduction/flow/). This is how you will make contributions in practice.
   1. Checkout to a new feature branch. `$: git checkout -b your-name-actions;`
   1. Add your name and the date to the top of your README above the workshop directions.
-  1. Use the following git commands, `$: git add .`; `$: git commit -m'initial repo push'`; `$: git push origin master;` this updates your remote repository on GitHub.
+  1. Use the following git commands: 
+  ```  
+    $: git add .;  
+    $: git commit -m'initial repo push;  
+    $: git push origin master;  
+    this updates your remote repository on GitHub.  
+  ```  
+  1. Checkout to a new feature branch. `$: git checkout -b your-name-actions;`
+
   1. If `npm` or `node` have not been installed, [install them](https://www.guru99.com/download-install-node-js.html).
   1. Create a Personal Access token in your user/settings/developersettings. The scope of this PAT must include `write` to Repo and don't forget to delete it after the workshop :).
   ![Token Creation](/images/token.png)
@@ -36,15 +44,16 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
   2. Review your `workflow.yml` file named `unit-test-ci.yml` in `.github/workflows`.
   3. Set the workflow to run on:
   
-```yaml
-on:
-  pull_request:
-    branches:
-    - master
-  push:
-    branches:
-    - <your-name-actions (this is the branch you created)
 ```
+  yaml
+    on:
+      pull_request:
+        branches:
+          - master
+    push:
+      branches:
+        - <your-name-actions> (this is the branch you created)
+  ```
     
   4. In your workflow file `./.github/workflows/unit-test-ci.yml` , ensure that the action runs on ` - run: npm test`.
   ![Workflow Definition](/images/workflow.png)
