@@ -1,12 +1,12 @@
-# name: 'Create Repo Issues with a repository_dispatch event'
-# description: 'Creates a new issue with some content every time the action is run. Action is triggered by a repository_dispatch event.'
-# author: 'alwell-kevin'
-# inputs:
-#   gh_token:
-#     required: true
-#   body:
-#     required: false
-#     default: A default issue comment
-# runs:
-#   using: 'node12'
-#   main: './main/automation/update-issues.js'
+name: 'Create Repo Issues with a repository_dispatch event'
+description: 'Creates a new issue with some content every time the action is run. Action is triggered by a repository_dispatch event.'
+author: 'alwell-kevin'
+inputs:
+  gh_token:
+    required: true
+  body:
+    required: false
+    default: A default issue comment
+runs:
+  using: 'node12'
+  main: './main/automation/update-issues.js'
