@@ -7,7 +7,7 @@
 #
 #   push:
 #     branches:
-#       - develop
+#       - edgerley-actions
 #
 # jobs:
 #   build:
