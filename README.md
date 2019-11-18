@@ -122,3 +122,4 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 
 - **update-issues-action:**
   - Creates an issue when the repository_dispatch event is triggered. The contents of that Issue are defined by an associated work item created in a Fictitious Azure Board instance.
+  - Rajneesh Kumar 18-Nov-2019
