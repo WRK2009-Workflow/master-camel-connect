@@ -1,3 +1,4 @@
+Patrick Ruddiman
 ### Workshop Guide:
 
 GitHub Actions is an advanced feature of GitHub that enables automation and CI/CD natively. This workshop aims to educate you on how to implement these use cases across your repositories on GitHub. We encourage you to complete `Phase 2` in its entirety. Understanding actions concepts is one of the most important goals of this workshop and will enable you to implement actions that conform to modern best practices. Your moderator will likely be vastly out numbered during your workshop - therefore please rely heavily on the documentation provided and available on [help.github.com](https://help.github.com/en). The `final state` of this workshop is available [here](https://github.com/WRK2009-Workflow/master-camel-connect) for your convenience and reference. When you are complete, feel free to ask for feedback from your moderator and remember the best way to learn is to teach!
