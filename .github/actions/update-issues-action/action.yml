@@ -2,7 +2,7 @@
 # description: 'Creates a new issue with some content every time the action is run. Action is triggered by a repository_dispatch event.'
 # author: 'alwell-kevin'
 # inputs:
-#   GITHUB_TOKEN:
+#   gh_token:
 #     required: true
 #   body:
 #     required: false
