@@ -1,18 +1,18 @@
-# name: Create an issue on this repo when repository_dispatch event used on repo.
+name: Create an issue on this repo when repository_dispatch event used on repo.
 
-# on:
-#   repository_dispatch:
-#     branches:
-#       - master
+on:
+  repository_dispatch:
+    branches:
+      - master
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@master
-#       - uses: actions/setup-node@v1
-#       - uses: ./.github/actions/update-issues-action
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         with:
-#           body: 'This came from my action input!'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+      - uses: ./.github/actions/update-issues-action
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          body: 'This came from my action input!'
