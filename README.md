@@ -4,20 +4,18 @@ GitHub Actions is an advanced feature of GitHub that enables automation and CI/C
 
 **Phase 1: Repo Creation**
   > **The goal of Phase 1 is to create your own branch off the forked `master-camel-connect` repo where you can build out your own GitHub Actions. You will also be introduced to the GitHub Flow and [Git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F) if you haven't seen it in the past.**
-  1. Fork [this repository](https://github.com/WRK2009-Workflow/master-camel-connect) to your user account.
-  1. Using your terminal, command prompt, or the [GitHub client](https://desktop.github.com).
-  1. Clone your new repository to your local machine using `git clone https://github.com/your_username/master-camel-connect.git`
-    - If clone is failing, check that you have replaced the variable in that url.
-  1. Now that you have the repo locally, cd into the application.
-  1. Run `npm install` in the root of your directory to install dependencies.
+  1. Fork this repository to your user account.
+  ![Fork Repository](/images/fork.png)
   1. Understand [GitHub flow](https://guides.github.com/introduction/flow/). This is how you will make contributions in practice.
+  1. On your copy of the repository, click the branch bar next to "New pull request". Type the name of your new branch `your-name-actions` and press `enter` to create it.
+  1. On `your-name-actions` branch, click the `edit` icon on your README.md. It looks like a pencil on the top right of the rendering. 
   1. Add your name and the date to the top of your README above the workshop directions.
-  1. Use the following git commands, `$: git add .`; `$: git commit -m'initial repo push'`; `$: git push origin master;` this updates your remote repository on GitHub.
-  1. Checkout to a new feature branch. `$: git checkout -b your-name-actions;`
-  1. If `npm` or `node` have not been installed, [install them](https://www.guru99.com/download-install-node-js.html).
-  1. Create a Personal Access token in your user/settings/developersettings. The scope of this PAT must include `write` to Repo and don't forget to delete it after the workshop :).
+  1. Scroll down after you have made this change. You are prompted to "Commit changes". Add a declaritive, brief description to this change like `insert hacker name` in the title and an extended description of the change you made in the wider box.
+  1.  Commit directly to the csa-feedback branch.
+  ![Commit Changes](/images/commit-name.png)
+  1. Create a Personal Access token in your user/settings/developersettings. The scope of this PAT must include Repo and workflow. PS: Don't forget to delete it after the workshop :).
   ![Token Creation](/images/token.png)
-  1. You should now a) Have your own version of the application in GitHub and on your local machine. b) Have your name and the date at the top of your README. c) Be working off `your-name-actions` branch of your repository. d) Ready to create an action!
+  1. CHECK IN - You should now a) Have your own version of the repository in GitHub. b) Have your name and the date at the top of your README. c) Be working off `your-name-actions` branch of your repository. d) Ready to create an action!
 
 **Phase 2: IMPORTANT Read the Docs**
   > **The goal of Phase 2 is to understand the major concepts that will be implemented throughout the workshop. Documentation should be read carefully and referred to often.**
