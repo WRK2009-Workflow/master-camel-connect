@@ -1,4 +1,4 @@
-### Workshop Guide:
+### GitHub Actions Learning Lab Workshops Guide:
 
 GitHub Actions is an advanced feature of GitHub that enables automation, artifact management and CI/CD natively. This workshop aims to educate you on how to implement these workflows across your projects on GitHub. We encourage you not to skip `Phase 1` as this is the most important step to implementing actions and workflows that conform to modern best practices. 
 
