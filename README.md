@@ -12,8 +12,6 @@ Your moderator will likely be vastly out numbered during your workshop - therefo
   1. GitHub API - [Creating an Issue](https://developer.github.com/v3/issues/).
   1. [How to use Postman](https://learning.getpostman.com/getting-started/) to send an API request.
   ![Postman](/images/postman.png)
-  1. [Simple JavaScript](https://www.w3schools.com/js/js_examples.asp).
-  1. Understanding [git](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F), the distributed version control system.
 
 **Phase 2: Create your first action**
   > **The goal of Phase 2 is to Create a simple GitHub Action and use it in a workflow.**
