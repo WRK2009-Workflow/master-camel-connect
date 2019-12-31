@@ -1,1 +1,0 @@
-This Action is executed when the update-issues.yml workflow is executed with a repository_dispatch event. ./main/automation/update-issues.js is where the API request to create an issue is written. action.yml contains the action metadata, make sure these env vars are in your repo secrets prior to running.
